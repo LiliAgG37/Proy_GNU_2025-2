@@ -10,6 +10,7 @@
 ### Lo anterior generará un archivo CSV con la información solicitada de las 9 estaciones ENP para los meses que se tienen registro
 ### del año 2022, se procesaron para este objetivo 87 archivos CSV.
 
+
 OUTPUT="resultados_ENP.csv"
 echo "Estación,Longitud,Latitud,Tmax,Pmax,Date" > "$OUTPUT"
 
@@ -63,6 +64,7 @@ for ENP in {1..9}; do
         echo "${ESTACION},${LON},${LAT},${Tmax},${Pmax},2022-${MES}" >> "$OUTPUT"
     done
 done
+
 
 ##### Notas adicionales:
 ##### Se reemplazan los valores "null" como 0 sin dato para que no generara problema al momentos de realizar los máximos y que la gráfica pueda visualizarse al moemnto de llamar el script de python
